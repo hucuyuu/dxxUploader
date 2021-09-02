@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="no">
+    <style>
+        input[type=button],
+        input[type=submit],
+        input[type=reset] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            width: 60%;
+            border-radius: 10px;
+        }
+
+        input[type=text],
+        input[type=file],
+        select {
+            width: 95%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+		@media (prefers-color-scheme: dark) {
+            html{
+			    background-color: black;
+		    }
+		    body{
+            	filter: invert( 1) hue-rotate( 180deg);
+            }
+	    }
+
+
+
+	    @media not (prefers-color-scheme: dark) {
+            html{
+			    background-color: white;
+            }
+	    }
+    </style>
+    <title>青年大学习第11季第{{ dxxNumber }}期</title>
+</head>
+
+<body>
+    <h1 style="text-align:center;">青年大学习</h1>
+    <h2 style="text-align:center;">第11季第{{ dxxNumber }}期</h2>
+    <br>
+
+    <p style="text-align:center;font-size:10px;" hidden>如果这个页面打不开了，</p>
+    <p style="text-align:center;font-size:10px;" hidden>请联系xxx</p>
+    <form action="/uploader" method="POST" enctype="multipart/form-data">
+        <p style="text-align:center;font-size:20px;">上传第{{ dxxNumber }}期截图: <input type="file" name="file"
+                accept=".jpg,.png" required /></p>
+        <p style="text-align:center;font-size:20px;" hidden>上传第{{ dxxNumber }}期截图: <input type="text"
+                name="dxxNumberPost" value="{{ dxxNumber }}" /></p>
+        <p style="text-align:center;font-size:20px;">学号: <input type="text" name="studentId" maxlength="8"
+                autocomplete="on" placeholder="在这里填学号" autofocus required /></p>
+        <p style="text-align:center;font-size:20px;"><input type="submit" value="提交第{{ dxxNumber }}期大学习截图" /></p>
+    </form>
+    <p style="text-align:center;font-size:15px;color:gray;">填写正确的学号</p>
+    <p style="text-align:center;font-size:15px;color:gray;">网站自动帮你P学号姓名</p>
+</body>
+
+
+
+</html>
